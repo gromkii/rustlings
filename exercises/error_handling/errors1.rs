@@ -10,8 +10,7 @@ pub fn generate_nametag_text(name: String) -> Option<String> {
     if name.len() > 0 {
         Some(format!("Hi! My name is {}", name))
     } else {
-        // Empty names aren't allowed.
-        None
+        Err("`name` was empty; it must be nonempty.".into())
     }
 }
 
